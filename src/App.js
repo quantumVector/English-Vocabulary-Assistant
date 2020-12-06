@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
-import ExerciseWrap from './components/ExerciseWrap/ExerciseWrap';
+import ExerciseWrapContainer from './components/ExerciseWrap/ExerciseWrapContainer';
 
 function App(props) {
   return (
     <div className="app-wrapper">
-      <ExerciseWrap store={props.store} />
+      <ExerciseWrapContainer />
     </div>
   );
 }
