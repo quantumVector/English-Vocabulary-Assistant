@@ -6,11 +6,15 @@ const ExerciseWrap = (props) => {
     props.updateCurrentTextAnswer(e.target.value);
   };
 
+  const onClick = () => {
+    props.checkAnswer();
+  }
+
   return (
     <div className={classes.exerciseWrap}>
       <div className={classes.word}>{props.vocabulary[props.vocabulary.length - 1].rusVersion}</div>
       <input type="text" onChange={onUpdateCurrentTextAnswer} value={props.currentTextAnswer}/>
-      <button>Проверить</button>
+      <button onClick={onClick}>Проверить</button>
     </div>
   )
 }
