@@ -5,7 +5,7 @@ const ExerciseWrap = (props) => {
   console.log(props.vocabulary);
   return (
     <div className={classes.exerciseWrap}>
-      <div className={classes.word}>Test word</div>
+      <div className={classes.word}>{props.vocabulary[props.vocabulary.length - 1].rusVersion}</div>
       <input type="text"/>
       <button>Проверить</button>
     </div>

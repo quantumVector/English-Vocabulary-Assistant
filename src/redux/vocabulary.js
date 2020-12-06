@@ -1,72 +1,154 @@
 const noun = 'Имя существительное';
 const adverb = 'Наречие';
 const adjective = 'Имя прилагательное';
+const sentence = 'Предложение'
 const construction = 'Конструкция';
 
 const vocabulary = [
+
   {
-    engItem: "nowadays",
-    translate: [
-      {
-        value: "настоящее время",
-        partSpeech: noun,
-      },
-      {
-        value: "в наши дни",
-        partSpeech: adverb,
-      },
-      {
-        value: "теперь",
-        partSpeech: adverb,
-      }
-      ,
-      {
-        value: "в наше время",
-        partSpeech: adverb,
-      }
-    ]
+    rusVersion: "удовлетворенный",
+    engVersion: "satisfied",
+    partSpeech: adjective,
+    comment: `другой вариант:
+    довольный (имя прилагательное)`
   },
+
   {
-    engItem: "tomorrow",
-    translate: [
-      {
-        value: "завтра",
-        partSpeech: adverb,
-      },
-      {
-        value: "завтрашний",
-        partSpeech: adjective,
-      }
-    ]
+    rusVersion: "Он удовлетворен этим решением.",
+    engVersion: "He's satisfied with this decision.",
+    partSpeech: sentence,
+    comment: `Конструкция: satisfied with smth. or smb.
+    В английском satisfied имя прилагательное.`
   },
+
   {
-    engItem: "obvious",
-    translate: [
-      {
-        value: "очевидный",
-        partSpeech: adjective,
-      }
-    ],
+    rusVersion: "усталый",
+    engVersion: "tired",
+    partSpeech: adjective,
+    comment: `В нашем языке может принимать форму глагола,
+    а в английском tired имя прилагательное, например:
+    Он очень устал. - He's very tired.`
   },
+
   {
-    engItem: "Я интересуюсь этим.",
-    translate: [
-      {
-        value: "I'm interested in it.",
-        partSpeech: construction,
-        construction: "to be nterested in smth.",
-      }
-    ],
+    rusVersion: "Они реально устали.",
+    engVersion: "They're really tired.",
+    partSpeech: sentence,
+    comment: `В нашем языке может принимать форму глагола,
+    а в английском tired имя прилагательное, например:
+    Он очень устал. - He's very tired.`
   },
+
   {
-    engItem: "chair",
-    translate: [
-      {
-        value: "Стул",
-        partSpeech: noun,
-      }
-    ],
+    rusVersion: "в командировке",
+    engVersion: "on a business trip",
+    partSpeech: construction,
+    comment: `Тоже самое, что "в деловой поездке".
+    Предлогом on.`
   },
+
+  {
+    rusVersion: "в деловой поездке",
+    engVersion: "on a business trip",
+    partSpeech: construction,
+    comment: `Тоже самое, что "в командировке".
+    Предлогом on.`
+  },
+
+  {
+    rusVersion: "в отпуске",
+    engVersion: "on holiday",
+    partSpeech: construction,
+    comment: `Предлогом on.`
+  },
+
+  {
+    rusVersion: "манеры",
+    engVersion: "manner",
+    partSpeech: noun,
+    comment: `Манера или манеры, буква s не добавляется`
+  },
+
+  {
+    rusVersion: "оптимистичен",
+    engVersion: "optimistic",
+    partSpeech: adjective,
+    comment: `другие варианты:
+    оптимистичный, оптимистический`
+  },
+
+  {
+    rusVersion: "пессимистичный",
+    engVersion: "pessimistic",
+    partSpeech: adjective,
+    comment: `другие варианты:
+    пессимистический, пессимистичен`
+  },
+
+  {
+    rusVersion: "ванная",
+    engVersion: "bathroom",
+    partSpeech: noun,
+    comment: null
+  },
+
+  {
+    rusVersion: "в ванной",
+    engVersion: "in the bathroom",
+    partSpeech: construction,
+    comment: null
+  },
+
+  {
+    rusVersion: "кухня",
+    engVersion: "kitchen",
+    partSpeech: noun,
+    comment: null
+  },
+
+  {
+    rusVersion: "на кухне",
+    engVersion: "in the kitchen",
+    partSpeech: construction,
+    comment: null
+  },
+
+  {
+    rusVersion: "карандаш",
+    engVersion: "pencil",
+    partSpeech: noun,
+    comment: null
+  },
+
+  {
+    rusVersion: "бояться",
+    engVersion: "afraid",
+    partSpeech: adjective,
+    comment: `В английском afraid имя прилагательное`
+  },
+
+  {
+    rusVersion: "Он боится этого.",
+    engVersion: "He's afraid of it.",
+    partSpeech: sentence,
+    comment: `Конструкция afraid of smth. or smb.`
+  },
+
+  {
+    rusVersion: "на последнем месте",
+    engVersion: "in the last place",
+    partSpeech: construction,
+    comment: `Предлог in`
+  },
+
+  {
+    rusVersion: "страсть",
+    engVersion: "passion",
+    partSpeech: noun,
+    comment: null
+  },
+
 ];
 
 export default vocabulary;
