@@ -1,9 +1,17 @@
 import vocabulary from './vocabulary';
 
-const initialState = vocabulary;
+const UPDATE_CURRENT_TEXT_ANSWERE = 'UPDATE-CURRENT-TEXT-ANSWERE';
+
+const initialState = {
+  items: vocabulary,
+  currentTextAnswer: '',
+};
 
 const vocabularyReducer = (state = initialState, action) => {
   switch(action.type) {
+    case 'UPDATE-CURRENT-TEXT-ANSWERE':
+      state.currentTextAnswer = action.text;
+      return state;
     default:
       return state;
   }
@@ -19,5 +27,12 @@ export const shuffleVocabulary = (vocabulary) => {
 
   return shuffledArray;
 };
+
+export const updateCurrentTextAnswerCreator = (text) => {
+  return {
+    type: UPDATE_CURRENT_TEXT_ANSWERE,
+    text,
+  }
+}
 
 export default vocabularyReducer;

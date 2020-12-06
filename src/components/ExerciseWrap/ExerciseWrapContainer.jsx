@@ -1,16 +1,21 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { shuffleVocabulary } from '../../redux/vocabularyReducer';
+import { shuffleVocabulary, updateCurrentTextAnswerCreator } from '../../redux/vocabularyReducer';
 import ExerciseWrap from './ExerciseWrap';
 
 const mapStateToProps = (state) => {
   return {
-    vocabulary: shuffleVocabulary(state.vocabulary),
+    vocabulary: shuffleVocabulary(state.vocabulary.items),
+    currentTextAnswer: state.vocabulary.currentTextAnswer,
   };
 }
 
 const mapDispatchToProps = (dispatch) => {
-  return {}
+  return {
+    updateCurrentTextAnswer: (text) => {
+      dispatch(updateCurrentTextAnswerCreator(text));
+    }
+  }
 }
 
 
