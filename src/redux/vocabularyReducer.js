@@ -2,6 +2,7 @@ import vocabulary from './vocabulary';
 
 const UPDATE_CURRENT_TEXT_ANSWERE = 'UPDATE-CURRENT-TEXT-ANSWERE';
 const CHECK_ANSWER = 'CHECK-ANSWER';
+const NEXT = 'NEXT';
 
 const shuffleVocabulary = (vocabulary) => {
   const shuffledArray = vocabulary;
@@ -18,6 +19,7 @@ const initialState = {
   items: vocabulary,
   shuffledItems: shuffleVocabulary(vocabulary),
   currentTextAnswer: '',
+  statusAnswer: false,
 };
 
 const vocabularyReducer = (state = initialState, action) => {
@@ -33,10 +35,16 @@ const vocabularyReducer = (state = initialState, action) => {
     case 'CHECK-ANSWER':
       if (stateCopy.shuffledItems[stateCopy.shuffledItems.length - 1]
         .engVersion === stateCopy.currentTextAnswer) {
-          stateCopy.shuffledItems.splice(-1, 1);
-          stateCopy.currentTextAnswer = '';
+        stateCopy.statusAnswer = 'Успех';
+      } else {
+        stateCopy.statusAnswer = 'Неудача';
       }
       return stateCopy;
+    case 'NEXT':
+      stateCopy.shuffledItems.splice(-1, 1);
+      stateCopy.currentTextAnswer = '';
+      stateCopy.statusAnswer = false;
+      return stateCopy
     default:
       return state;
   }
@@ -52,6 +60,12 @@ export const updateCurrentTextAnswerCreator = (text) => {
 export const checkAnswerCreator = () => {
   return {
     type: CHECK_ANSWER,
+  }
+}
+
+export const nextCreator = () => {
+  return {
+    type: NEXT,
   }
 }
 

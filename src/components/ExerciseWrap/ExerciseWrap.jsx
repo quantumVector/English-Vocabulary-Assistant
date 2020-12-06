@@ -1,20 +1,22 @@
 import React from 'react';
+import CheckButton from '../CheckButton/CheckButton';
+import ResultInfo from '../ResultInfo/ResultInfo';
 import classes from './ExerciseWrap.module.css';
 
 const ExerciseWrap = (props) => {
-  const onUpdateCurrentTextAnswer = (e) => {
-    props.updateCurrentTextAnswer(e.target.value);
-  };
-
-  const onClick = () => {
-    props.checkAnswer();
+  const displayComponent = () => {
+    console.log(props)
+    if (!props.statusAnswer) return <CheckButton checkAnswer={props.checkAnswer}
+      updateCurrentTextAnswer={props.updateCurrentTextAnswer} />
+    if (props.statusAnswer) return <ResultInfo reuslt={props.statusAnswer}
+      item={props.vocabulary[props.vocabulary.length - 1]}
+      next={props.next} />
   }
 
   return (
     <div className={classes.exerciseWrap}>
       <div className={classes.word}>{props.vocabulary[props.vocabulary.length - 1].rusVersion}</div>
-      <input type="text" onChange={onUpdateCurrentTextAnswer} value={props.currentTextAnswer}/>
-      <button onClick={onClick}>Проверить</button>
+      { displayComponent()}
     </div>
   )
 }
