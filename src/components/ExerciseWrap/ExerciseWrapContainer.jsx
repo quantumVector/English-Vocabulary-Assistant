@@ -1,11 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { shuffleVocabulary, updateCurrentTextAnswerCreator } from '../../redux/vocabularyReducer';
+import { updateCurrentTextAnswerCreator } from '../../redux/vocabularyReducer';
 import ExerciseWrap from './ExerciseWrap';
 
 const mapStateToProps = (state) => {
   return {
-    vocabulary: shuffleVocabulary(state.vocabulary.items),
+    vocabulary: state.vocabulary.shuffledVocabulary,
     currentTextAnswer: state.vocabulary.currentTextAnswer,
   };
 }

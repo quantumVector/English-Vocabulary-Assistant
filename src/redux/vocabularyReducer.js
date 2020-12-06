@@ -2,22 +2,7 @@ import vocabulary from './vocabulary';
 
 const UPDATE_CURRENT_TEXT_ANSWERE = 'UPDATE-CURRENT-TEXT-ANSWERE';
 
-const initialState = {
-  items: vocabulary,
-  currentTextAnswer: '',
-};
-
-const vocabularyReducer = (state = initialState, action) => {
-  switch(action.type) {
-    case 'UPDATE-CURRENT-TEXT-ANSWERE':
-      state.currentTextAnswer = action.text;
-      return state;
-    default:
-      return state;
-  }
-}
-
-export const shuffleVocabulary = (vocabulary) => {
+const shuffleVocabulary = (vocabulary) => {
   const shuffledArray = vocabulary;
 
   for (let i = shuffledArray.length - 1; i > 0; i--) {
@@ -27,6 +12,26 @@ export const shuffleVocabulary = (vocabulary) => {
 
   return shuffledArray;
 };
+
+const initialState = {
+  items: vocabulary,
+  shuffledVocabulary: shuffleVocabulary(vocabulary),
+  currentTextAnswer: '',
+};
+
+const vocabularyReducer = (state = initialState, action) => {
+  const stateCopy = {
+    ...state,
+  }
+
+  switch (action.type) {
+    case 'UPDATE-CURRENT-TEXT-ANSWERE':
+      stateCopy.currentTextAnswer = action.text;
+      return stateCopy;
+    default:
+      return state;
+  }
+}
 
 export const updateCurrentTextAnswerCreator = (text) => {
   return {

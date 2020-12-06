@@ -2,8 +2,6 @@ import React from 'react';
 import classes from './ExerciseWrap.module.css';
 
 const ExerciseWrap = (props) => {
-  console.log(props.vocabulary);
-
   const onUpdateCurrentTextAnswer = (e) => {
     props.updateCurrentTextAnswer(e.target.value);
   };
