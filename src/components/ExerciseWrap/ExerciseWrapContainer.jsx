@@ -1,9 +1,11 @@
+import React from 'react';
 import { connect } from 'react-redux';
+import { shuffleVocabulary } from '../../redux/vocabularyReducer';
 import ExerciseWrap from './ExerciseWrap';
 
 const mapStateToProps = (state) => {
   return {
-    vocabulary: state.vocabulary,
+    vocabulary: shuffleVocabulary(state.vocabulary),
   };
 }
 
