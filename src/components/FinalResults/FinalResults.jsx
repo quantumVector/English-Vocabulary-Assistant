@@ -2,7 +2,7 @@ import React from 'react';
 import classes from './FinalResults.module.css';
 
 const FinalResults = (props) => {
-  const percent = props.correctAnswers * 100 / props.totalItems;
+  const percent = Math.floor(props.correctAnswers * 100 / props.totalItems);
 
   const onClick = () => {
     props.restart();
