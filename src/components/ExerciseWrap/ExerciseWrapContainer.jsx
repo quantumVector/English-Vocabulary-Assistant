@@ -1,6 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { updateCurrentTextAnswerCreator, checkAnswerCreator, nextCreator } from '../../redux/vocabularyReducer';
+import {
+  updateCurrentTextAnswerCreator, checkAnswerCreator,
+  nextCreator, restartCreator
+} from '../../redux/vocabularyReducer';
 import ExerciseWrap from './ExerciseWrap';
 
 const mapStateToProps = (state) => {
@@ -25,6 +28,9 @@ const mapDispatchToProps = (dispatch) => {
     },
     next: () => {
       dispatch(nextCreator());
+    },
+    restart: () => {
+      dispatch(restartCreator());
     }
   }
 }

@@ -3,6 +3,7 @@ import vocabulary from './vocabulary';
 const UPDATE_CURRENT_TEXT_ANSWERE = 'UPDATE-CURRENT-TEXT-ANSWERE';
 const CHECK_ANSWER = 'CHECK-ANSWER';
 const NEXT = 'NEXT';
+const RESTART = 'RESTART';
 
 const shuffleVocabulary = (vocabulary) => {
   const shuffledArray = vocabulary;
@@ -57,6 +58,14 @@ const vocabularyReducer = (state = initialState, action) => {
       }
 
       return stateCopy
+    case 'RESTART':
+      stateCopy.shuffledItems = shuffleVocabulary(stateCopy.items);
+      stateCopy.currentTextAnswer = '';
+      stateCopy.correctAnswers = 0;
+      stateCopy.wrongAnswers = 0;
+      stateCopy.statusAnswer = false;
+      stateCopy.showResults = false;
+      return stateCopy;
     default:
       return state;
   }
@@ -78,6 +87,12 @@ export const checkAnswerCreator = () => {
 export const nextCreator = () => {
   return {
     type: NEXT,
+  }
+}
+
+export const restartCreator = () => {
+  return {
+    type: RESTART,
   }
 }
 

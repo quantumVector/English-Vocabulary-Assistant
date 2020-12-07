@@ -7,7 +7,8 @@ import classes from './ExerciseWrap.module.css';
 const ExerciseWrap = (props) => {
   const displayComponent = () => {
     if (props.showResults) return <FinalResults correctAnswers={props.correctAnswers}
-      wrongAnswers={props.wrongAnswers} totalItems={props.totalItems} />
+      wrongAnswers={props.wrongAnswers} totalItems={props.totalItems}
+      restart={props.restart} />
 
     if (!props.statusAnswer) return <CheckButton checkAnswer={props.checkAnswer}
       updateCurrentTextAnswer={props.updateCurrentTextAnswer}
