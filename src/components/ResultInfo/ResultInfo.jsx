@@ -11,8 +11,6 @@ const ResultInfo = (props) => {
   if (props.reuslt === 'Успех') classResult = classes.success;
   if (props.reuslt === 'Неудача') classResult = classes.fail;
 
-  console.log(classResult)
-
   return (
     <div className={classes.resultBox + ' ' + classResult} >
       <div className={classes.result}>{props.reuslt}</div>

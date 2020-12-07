@@ -20,7 +20,7 @@ const CheckButton = (props) => {
     <div className={classes.answerBox}>
       <input type="text" className={classes.textAnswer} onChange={onUpdateCurrentTextAnswer}
         onKeyDown={onKeyDown}
-        value={props.currentTextAnswer} />
+        value={props.currentTextAnswer} autoFocus />
       <button className={classes.btn} onClick={onClick}>Проверить</button>
     </div>
   )
