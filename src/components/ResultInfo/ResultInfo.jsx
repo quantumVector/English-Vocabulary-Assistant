@@ -8,9 +8,15 @@ const ResultInfo = (props) => {
   };
 
   let classResult;
+  let comment = null;
+  let classComment = null;
 
   if (props.reuslt === 'Успех') classResult = classes.success;
-  if (props.reuslt === 'Неудача') classResult = classes.fail;
+  if (props.reuslt === 'Неудача') {
+    classResult = classes.fail;
+    comment = props.item.comment;
+    classComment = classes.comment;
+  }
 
   return (
     <div>
@@ -18,6 +24,7 @@ const ResultInfo = (props) => {
       <div className={classes.resultBox + ' ' + classResult} >
         <div className={classes.result}>{props.reuslt}</div>
         <div className={classes.resultText}>{props.item.engVersion}</div>
+        <div className={classComment}>{comment}</div>
         <button className={classes.btn} onClick={onClick}>Дальше</button>
       </div>
     </div>

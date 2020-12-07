@@ -28,6 +28,11 @@
   font-size: 20px;
 }
 
+.comment {
+  padding: 20px;
+  font-size: 14px;
+}
+
 .btn {
   padding: 5px 10px;
   font-size: 15px;
