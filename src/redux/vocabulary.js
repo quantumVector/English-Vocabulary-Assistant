@@ -31,7 +31,7 @@ const vocabulary = [
     Он очень устал. - He's very tired.`
   },
 
-  {
+  /* {
     rusVersion: "Они реально устали.",
     engVersion: "They're really tired.",
     partSpeech: sentence,
@@ -147,7 +147,7 @@ const vocabulary = [
     engVersion: "passion",
     partSpeech: noun,
     comment: null
-  },
+  }, */
 
 ];
 

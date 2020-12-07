@@ -20,6 +20,10 @@ const initialState = {
   shuffledItems: shuffleVocabulary(vocabulary),
   currentTextAnswer: '',
   statusAnswer: false,
+  correctAnswers: 0,
+  wrongAnswers: 0,
+  showResults: false,
+  totalItems: vocabulary.length,
 };
 
 const vocabularyReducer = (state = initialState, action) => {
@@ -36,14 +40,22 @@ const vocabularyReducer = (state = initialState, action) => {
       if (stateCopy.shuffledItems[stateCopy.shuffledItems.length - 1]
         .engVersion === stateCopy.currentTextAnswer) {
         stateCopy.statusAnswer = 'Успех';
+        stateCopy.correctAnswers += 1;
       } else {
         stateCopy.statusAnswer = 'Неудача';
+        stateCopy.wrongAnswers += 1;
       }
       return stateCopy;
     case 'NEXT':
       stateCopy.shuffledItems.splice(-1, 1);
-      stateCopy.currentTextAnswer = '';
-      stateCopy.statusAnswer = false;
+
+      if (stateCopy.shuffledItems.length) {
+        stateCopy.currentTextAnswer = '';
+        stateCopy.statusAnswer = false;
+      } else {
+        stateCopy.showResults = true;
+      }
+
       return stateCopy
     default:
       return state;

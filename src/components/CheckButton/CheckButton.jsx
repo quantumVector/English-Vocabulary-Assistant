@@ -1,4 +1,5 @@
 import React from 'react';
+import PurposeTranslation from '../PurposeTranslation/PurposeTranslation';
 import classes from './CheckButton.module.css';
 
 const CheckButton = (props) => {
@@ -18,6 +19,7 @@ const CheckButton = (props) => {
 
   return (
     <div className={classes.answerBox}>
+      <PurposeTranslation vocabulary={props.vocabulary} />
       <input type="text" className={classes.textAnswer} onChange={onUpdateCurrentTextAnswer}
         onKeyDown={onKeyDown}
         value={props.currentTextAnswer} autoFocus />

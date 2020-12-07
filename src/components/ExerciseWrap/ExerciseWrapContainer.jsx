@@ -8,6 +8,10 @@ const mapStateToProps = (state) => {
     vocabulary: state.vocabulary.shuffledItems,
     currentTextAnswer: state.vocabulary.currentTextAnswer,
     statusAnswer: state.vocabulary.statusAnswer,
+    showResults: state.vocabulary.showResults,
+    correctAnswers: state.vocabulary.correctAnswers,
+    wrongAnswers: state.vocabulary.wrongAnswers,
+    totalItems: state.vocabulary.totalItems,
   };
 }
 
@@ -24,7 +28,6 @@ const mapDispatchToProps = (dispatch) => {
     }
   }
 }
-
 
 const ExerciseWrapContainer = connect(mapStateToProps, mapDispatchToProps)(ExerciseWrap);
 
