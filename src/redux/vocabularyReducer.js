@@ -1,23 +1,11 @@
 import vocabulary from './vocabulary';
 
 const UPDATE_CURRENT_TEXT_ANSWERE = 'UPDATE-CURRENT-TEXT-ANSWERE';
+const CHECK_ANSWER = 'CHECK-ANSWER';
+const NEXT = 'NEXT';
+const RESTART = 'RESTART';
 
-const initialState = {
-  items: vocabulary,
-  currentTextAnswer: '',
-};
-
-const vocabularyReducer = (state = initialState, action) => {
-  switch(action.type) {
-    case 'UPDATE-CURRENT-TEXT-ANSWERE':
-      state.currentTextAnswer = action.text;
-      return state;
-    default:
-      return state;
-  }
-}
-
-export const shuffleVocabulary = (vocabulary) => {
+const shuffleVocabulary = (vocabulary) => {
   const shuffledArray = vocabulary;
 
   for (let i = shuffledArray.length - 1; i > 0; i--) {
@@ -28,10 +16,87 @@ export const shuffleVocabulary = (vocabulary) => {
   return shuffledArray;
 };
 
+const initialState = {
+  items: vocabulary,
+  shuffledItems: shuffleVocabulary(vocabulary),
+  currentTextAnswer: '',
+  statusAnswer: false,
+  correctAnswers: 0,
+  wrongAnswers: 0,
+  showResults: false,
+  totalItems: vocabulary.length,
+  completedItems: 0,
+};
+
+const vocabularyReducer = (state = initialState, action) => {
+  const stateCopy = {
+    ...state,
+    shuffledItems: [...state.shuffledItems],
+  }
+
+  switch (action.type) {
+    case 'UPDATE-CURRENT-TEXT-ANSWERE':
+      stateCopy.currentTextAnswer = action.text;
+      return stateCopy;
+    case 'CHECK-ANSWER':
+      if (stateCopy.shuffledItems[stateCopy.shuffledItems.length - 1]
+        .engVersion === stateCopy.currentTextAnswer) {
+        stateCopy.statusAnswer = 'Успех';
+        stateCopy.correctAnswers += 1;
+        stateCopy.completedItems += 1;
+      } else {
+        stateCopy.statusAnswer = 'Неудача';
+        stateCopy.wrongAnswers += 1;
+        stateCopy.completedItems += 1;
+      }
+      return stateCopy;
+    case 'NEXT':
+      stateCopy.shuffledItems.splice(-1, 1);
+
+      if (stateCopy.shuffledItems.length) {
+        stateCopy.currentTextAnswer = '';
+        stateCopy.statusAnswer = false;
+      } else {
+        stateCopy.showResults = true;
+      }
+
+      return stateCopy
+    case 'RESTART':
+      stateCopy.shuffledItems = shuffleVocabulary(stateCopy.items);
+      stateCopy.currentTextAnswer = '';
+      stateCopy.correctAnswers = 0;
+      stateCopy.wrongAnswers = 0;
+      stateCopy.completedItems = 0;
+      stateCopy.statusAnswer = false;
+      stateCopy.showResults = false;
+      return stateCopy;
+    default:
+      return state;
+  }
+}
+
 export const updateCurrentTextAnswerCreator = (text) => {
   return {
     type: UPDATE_CURRENT_TEXT_ANSWERE,
     text,
+  }
+}
+
+export const checkAnswerCreator = () => {
+  return {
+    type: CHECK_ANSWER,
+  }
+}
+
+export const nextCreator = () => {
+  return {
+    type: NEXT,
+  }
+}
+
+export const restartCreator = () => {
+  return {
+    type: RESTART,
   }
 }
 
