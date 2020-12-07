@@ -1,4 +1,5 @@
 import React from 'react';
+import classes from './CheckButton.module.css';
 
 const CheckButton = (props) => {
   const onUpdateCurrentTextAnswer = (e) => {
@@ -10,9 +11,10 @@ const CheckButton = (props) => {
   }
 
   return (
-    <div>
-      <input type="text" onChange={onUpdateCurrentTextAnswer} value={props.currentTextAnswer} />
-      <button onClick={onClick}>Проверить</button>
+    <div className={classes.answerBox}>
+      <input type="text" className={classes.textAnswer} onChange={onUpdateCurrentTextAnswer}
+        value={props.currentTextAnswer} />
+      <button className={classes.btn} onClick={onClick}>Проверить</button>
     </div>
   )
 }
