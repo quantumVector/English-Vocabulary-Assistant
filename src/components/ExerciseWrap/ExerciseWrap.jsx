@@ -22,6 +22,7 @@ const ExerciseWrap = (props) => {
 
   return (
     <div className={classes.exerciseWrap}>
+      <div className={classes.counter}>{props.completedItems}/{props.totalItems}</div>
       {displayComponent()}
     </div>
   )

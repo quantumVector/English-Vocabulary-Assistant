@@ -15,6 +15,7 @@ const mapStateToProps = (state) => {
     correctAnswers: state.vocabulary.correctAnswers,
     wrongAnswers: state.vocabulary.wrongAnswers,
     totalItems: state.vocabulary.totalItems,
+    completedItems: state.vocabulary.completedItems,
   };
 }
 

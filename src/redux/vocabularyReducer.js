@@ -25,6 +25,7 @@ const initialState = {
   wrongAnswers: 0,
   showResults: false,
   totalItems: vocabulary.length,
+  completedItems: 0,
 };
 
 const vocabularyReducer = (state = initialState, action) => {
@@ -42,9 +43,11 @@ const vocabularyReducer = (state = initialState, action) => {
         .engVersion === stateCopy.currentTextAnswer) {
         stateCopy.statusAnswer = 'Успех';
         stateCopy.correctAnswers += 1;
+        stateCopy.completedItems += 1;
       } else {
         stateCopy.statusAnswer = 'Неудача';
         stateCopy.wrongAnswers += 1;
+        stateCopy.completedItems += 1;
       }
       return stateCopy;
     case 'NEXT':
@@ -63,6 +66,7 @@ const vocabularyReducer = (state = initialState, action) => {
       stateCopy.currentTextAnswer = '';
       stateCopy.correctAnswers = 0;
       stateCopy.wrongAnswers = 0;
+      stateCopy.completedItems = 0;
       stateCopy.statusAnswer = false;
       stateCopy.showResults = false;
       return stateCopy;

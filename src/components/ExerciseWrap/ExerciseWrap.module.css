@@ -8,3 +8,8 @@
   padding: 20px 0;
   width: 768px;
 }
+
+.counter {
+  font-size: 14px;
+  margin-bottom: 15px;
+}
