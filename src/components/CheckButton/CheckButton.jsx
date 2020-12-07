@@ -10,9 +10,16 @@ const CheckButton = (props) => {
     props.checkAnswer();
   }
 
+  const onKeyDown = (e) => {
+    if (e.key !== 'Enter') return;
+
+    props.checkAnswer();
+  }
+
   return (
     <div className={classes.answerBox}>
       <input type="text" className={classes.textAnswer} onChange={onUpdateCurrentTextAnswer}
+        onKeyDown={onKeyDown}
         value={props.currentTextAnswer} />
       <button className={classes.btn} onClick={onClick}>Проверить</button>
     </div>
