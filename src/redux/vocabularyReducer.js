@@ -39,8 +39,11 @@ const vocabularyReducer = (state = initialState, action) => {
       stateCopy.currentTextAnswer = action.text;
       return stateCopy;
     case 'CHECK-ANSWER':
-      if (stateCopy.shuffledItems[stateCopy.shuffledItems.length - 1]
-        .engVersion === stateCopy.currentTextAnswer) {
+      const item = stateCopy.shuffledItems[stateCopy.shuffledItems.length - 1]
+        .engVersion.replace('.', '');
+      const answer = stateCopy.currentTextAnswer.replace('.', '');
+
+      if (item === answer) {
         stateCopy.statusAnswer = 'Успех';
         stateCopy.correctAnswers += 1;
         stateCopy.completedItems += 1;

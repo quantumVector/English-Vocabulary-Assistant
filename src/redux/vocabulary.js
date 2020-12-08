@@ -178,7 +178,7 @@ const vocabulary = [
   },
 
   {
-    rusVersion: "к следующему году",
+    rusVersion: "к следующему месяцу",
     engVersion: "by next month",
     partSpeech: construction,
     comment: `Другие примеры с предлогом by в такой конструкции:
@@ -432,7 +432,7 @@ const vocabulary = [
   },
 
   {
-    rusVersion: "Мне нужно больше учиться.",
+    rusVersion: "Мне нужно усерднее учиться.",
     engVersion: "I need to study harder.",
     partSpeech: sentence,
     comment: null
