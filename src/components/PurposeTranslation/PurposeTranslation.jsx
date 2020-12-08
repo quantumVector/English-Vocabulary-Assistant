@@ -3,7 +3,7 @@ import classes from './PurposeTranslation.module.css';
 
 const PurposeTranslation = (props) => {
   return (
-    <div className={classes.word}>{props.vocabulary[props.vocabulary.length - 1].rusVersion}</div>
+    <div className={classes.word}>{props.task}</div>
   )
 }
 

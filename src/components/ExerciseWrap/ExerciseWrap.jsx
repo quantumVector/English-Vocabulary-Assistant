@@ -7,17 +7,21 @@ import classes from './ExerciseWrap.module.css';
 const ExerciseWrap = (props) => {
   const displayComponent = () => {
     if (props.showResults) return <FinalResults correctAnswers={props.correctAnswers}
-      wrongAnswers={props.wrongAnswers} totalItems={props.totalItems}
+      wrongAnswers={props.wrongAnswers}
+      totalItems={props.totalItems}
       restart={props.restart} />
 
     if (!props.statusAnswer) return <CheckButton checkAnswer={props.checkAnswer}
+      currentTextAnswer={props.currentTextAnswer}
       updateCurrentTextAnswer={props.updateCurrentTextAnswer}
-      vocabulary={props.vocabulary} />
+      task={props.vocabulary[props.vocabulary.length - 1].rusVersion} />
 
-    if (props.statusAnswer) return <ResultInfo reuslt={props.statusAnswer}
+    if (props.statusAnswer) return <ResultInfo currentTextAnswer={props.currentTextAnswer}
+      reuslt={props.statusAnswer}
       item={props.vocabulary[props.vocabulary.length - 1]}
       next={props.next}
-      vocabulary={props.vocabulary} />
+      task={props.vocabulary[props.vocabulary.length - 1].rusVersion}
+      comment={props.vocabulary[props.vocabulary.length - 1].comment} />
   }
 
   return (

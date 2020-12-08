@@ -19,7 +19,7 @@ const CheckButton = (props) => {
 
   return (
     <div className={classes.answerBox}>
-      <PurposeTranslation vocabulary={props.vocabulary} />
+      <PurposeTranslation task={props.task} />
       <input type="text" className={classes.textAnswer} onChange={onUpdateCurrentTextAnswer}
         onKeyDown={onKeyDown}
         value={props.currentTextAnswer} autoFocus />

@@ -22,7 +22,7 @@ const vocabulary = [
     engVersion: "He's satisfied with this decision.",
     partSpeech: sentence,
     comment: `Конструкция: satisfied with smth. or smb.
-    В английском satisfied имя прилагательное.`
+    В английском satisfied имя прилагательное.`,
   },
 
   {
