@@ -44,7 +44,7 @@ const vocabularyReducer = (state = initialState, action) => {
       const answer = stateCopy.currentTextAnswer.replace('.', '');
       const regexp = new RegExp(`${item}`, 'i');
 
-      if (regexp.test(answer)) {
+      if (regexp.test(answer) && item.length === answer.length) {
         stateCopy.statusAnswer = 'Успех';
         stateCopy.correctAnswers += 1;
         stateCopy.completedItems += 1;
