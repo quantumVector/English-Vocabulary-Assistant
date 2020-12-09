@@ -41,7 +41,7 @@ const vocabularyReducer = (state = initialState, action) => {
     case 'CHECK-ANSWER':
       const item = stateCopy.shuffledItems[stateCopy.shuffledItems.length - 1]
         .engVersion.replace('.', '');
-      const answer = stateCopy.currentTextAnswer.replace('.', '');
+      let answer = stateCopy.currentTextAnswer.replace('.', '').trim();
       const regexp = new RegExp(`${item}`, 'i');
 
       if (regexp.test(answer) && item.length === answer.length) {
