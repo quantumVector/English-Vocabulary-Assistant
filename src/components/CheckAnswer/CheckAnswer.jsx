@@ -1,25 +1,25 @@
 import React from 'react';
-import PurposeTranslation from '../PurposeTranslation/PurposeTranslation';
-import classes from './CheckButton.module.css';
+import TranslationPurpose from '../TranslationPurpose/TranslationPurpose';
+import classes from './CheckAnswer.module.css';
 
-const CheckButton = (props) => {
+const CheckAnswer = (props) => {
   const onUpdateCurrentTextAnswer = (e) => {
     props.updateCurrentTextAnswer(e.target.value);
   };
 
   const onClick = () => {
-    props.checkAnswer();
+    props.check();
   }
 
   const onKeyDown = (e) => {
     if (e.key !== 'Enter') return;
 
-    props.checkAnswer();
+    props.check();
   }
 
   return (
     <div className={classes.answerBox}>
-      <PurposeTranslation task={props.task} />
+      <TranslationPurpose task={props.task} />
       <input type="text" className={classes.textAnswer} onChange={onUpdateCurrentTextAnswer}
         onKeyDown={onKeyDown}
         value={props.currentTextAnswer} autoFocus />
@@ -28,4 +28,4 @@ const CheckButton = (props) => {
   )
 }
 
-export default CheckButton;
+export default CheckAnswer;

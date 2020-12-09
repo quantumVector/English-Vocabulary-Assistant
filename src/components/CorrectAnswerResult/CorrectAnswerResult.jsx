@@ -1,5 +1,5 @@
 import React from 'react';
-import PurposeTranslation from '../PurposeTranslation/PurposeTranslation';
+import TranslationPurpose from '../TranslationPurpose/TranslationPurpose';
 import classes from './CorrectAnswerResult.module.css';
 
 const CorrectAnswerResult = (props) => {
@@ -9,7 +9,7 @@ const CorrectAnswerResult = (props) => {
 
   return (
     <div>
-      <PurposeTranslation task={props.task} />
+      <TranslationPurpose task={props.task} />
       <div className={classes.result}>
         <div className={classes.title}>Правильно!</div>
         <div className={classes.correctAnswer}>{props.correctAnswer}</div>

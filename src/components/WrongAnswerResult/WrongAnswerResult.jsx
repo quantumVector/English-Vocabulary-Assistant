@@ -1,5 +1,5 @@
 import React from 'react';
-import PurposeTranslation from '../PurposeTranslation/PurposeTranslation';
+import TranslationPurpose from '../TranslationPurpose/TranslationPurpose';
 import classes from './WrongAnswerResult.module.css';
 
 const WrongAnswerResult = (props) => {
@@ -9,7 +9,7 @@ const WrongAnswerResult = (props) => {
 
   return (
     <div>
-      <PurposeTranslation task={props.task} />
+      <TranslationPurpose task={props.task} />
       <div className={classes.result} >
         <div className={classes.title}>Неверно!</div>
         <div className={classes.label}>Ваш ответ:</div>

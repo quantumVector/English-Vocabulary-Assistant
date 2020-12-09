@@ -86,7 +86,7 @@ export const updateCurrentTextAnswerCreator = (text) => {
   }
 }
 
-export const checkAnswerCreator = () => {
+export const checkCreator = () => {
   return {
     type: CHECK_ANSWER,
   }
