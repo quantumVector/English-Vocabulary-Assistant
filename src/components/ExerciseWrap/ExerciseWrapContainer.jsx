@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import {
-  updateCurrentTextAnswerCreator, checkAnswerCreator,
+  updateCurrentTextAnswerCreator, checkCreator,
   nextCreator, restartCreator
 } from '../../redux/vocabularyReducer';
 import ExerciseWrap from './ExerciseWrap';
@@ -24,8 +24,8 @@ const mapDispatchToProps = (dispatch) => {
     updateCurrentTextAnswer: (text) => {
       dispatch(updateCurrentTextAnswerCreator(text));
     },
-    checkAnswer: () => {
-      dispatch(checkAnswerCreator());
+    check: () => {
+      dispatch(checkCreator());
     },
     next: () => {
       dispatch(nextCreator());

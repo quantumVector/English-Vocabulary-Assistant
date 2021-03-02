@@ -1,4 +1,5 @@
-import vocabulary from './vocabulary';
+//import vocabulary from './vocabulary';
+import vocabulary from './vocabularyShort';
 
 const UPDATE_CURRENT_TEXT_ANSWERE = 'UPDATE-CURRENT-TEXT-ANSWERE';
 const CHECK_ANSWER = 'CHECK-ANSWER';
@@ -39,8 +40,12 @@ const vocabularyReducer = (state = initialState, action) => {
       stateCopy.currentTextAnswer = action.text;
       return stateCopy;
     case 'CHECK-ANSWER':
-      if (stateCopy.shuffledItems[stateCopy.shuffledItems.length - 1]
-        .engVersion === stateCopy.currentTextAnswer) {
+      const item = stateCopy.shuffledItems[stateCopy.shuffledItems.length - 1]
+        .engVersion.replace('.', '');
+      let answer = stateCopy.currentTextAnswer.replace('.', '').trim();
+      const regexp = new RegExp(`${item}`, 'i');
+
+      if (regexp.test(answer) && item.length === answer.length) {
         stateCopy.statusAnswer = 'Успех';
         stateCopy.correctAnswers += 1;
         stateCopy.completedItems += 1;
@@ -82,7 +87,7 @@ export const updateCurrentTextAnswerCreator = (text) => {
   }
 }
 
-export const checkAnswerCreator = () => {
+export const checkCreator = () => {
   return {
     type: CHECK_ANSWER,
   }
