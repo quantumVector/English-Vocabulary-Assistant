@@ -3,11 +3,11 @@ import vocabulary from './vocabularyShort';
 
 const UPDATE_CURRENT_TEXT_ANSWERE = 'UPDATE-CURRENT-TEXT-ANSWERE';
 const CHECK_ANSWER = 'CHECK-ANSWER';
-const NEXT = 'NEXT';
+const NEXT_EXERCISE = 'NEXT-EXERCISE';
 const RESTART = 'RESTART';
 
-const shuffleVocabulary = (vocabulary) => {
-  const shuffledArray = vocabulary;
+const shuffleVocabulary = (items = vocabulary) => {
+  const shuffledArray = items;
 
   for (let i = shuffledArray.length - 1; i > 0; i--) {
     let j = Math.floor(Math.random() * (i + 1));
@@ -27,6 +27,7 @@ const initialState = {
   showResults: false,
   totalItems: vocabulary.length,
   completedItems: 0,
+  repository: [],
 };
 
 const vocabularyReducer = (state = initialState, action) => {
@@ -53,9 +54,10 @@ const vocabularyReducer = (state = initialState, action) => {
         stateCopy.statusAnswer = 'Неудача';
         stateCopy.wrongAnswers += 1;
         stateCopy.completedItems += 1;
+        stateCopy.repository.push(stateCopy.shuffledItems[stateCopy.shuffledItems.length - 1]);
       }
       return stateCopy;
-    case 'NEXT':
+    case 'NEXT-EXERCISE':
       stateCopy.shuffledItems.splice(-1, 1);
 
       if (stateCopy.shuffledItems.length) {
@@ -67,7 +69,14 @@ const vocabularyReducer = (state = initialState, action) => {
 
       return stateCopy
     case 'RESTART':
-      stateCopy.shuffledItems = shuffleVocabulary(stateCopy.items);
+      if (stateCopy.repository.length) {
+        stateCopy.shuffledItems = shuffleVocabulary(stateCopy.repository);
+        stateCopy.totalItems = stateCopy.repository.length;
+        stateCopy.repository = [];
+      } else {
+        stateCopy.shuffledItems = shuffleVocabulary(stateCopy.items);
+        stateCopy.totalItems = stateCopy.items.length;
+      }
       stateCopy.currentTextAnswer = '';
       stateCopy.correctAnswers = 0;
       stateCopy.wrongAnswers = 0;
@@ -80,26 +89,26 @@ const vocabularyReducer = (state = initialState, action) => {
   }
 }
 
-export const updateCurrentTextAnswerCreator = (text) => {
+export const updateCurrentTextAnswer = (text) => {
   return {
     type: UPDATE_CURRENT_TEXT_ANSWERE,
     text,
   }
 }
 
-export const checkCreator = () => {
+export const checkAnswer = () => {
   return {
     type: CHECK_ANSWER,
   }
 }
 
-export const nextCreator = () => {
+export const nextExercise = () => {
   return {
-    type: NEXT,
+    type: NEXT_EXERCISE,
   }
 }
 
-export const restartCreator = () => {
+export const restart = () => {
   return {
     type: RESTART,
   }

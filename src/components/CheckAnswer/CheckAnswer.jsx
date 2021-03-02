@@ -3,27 +3,13 @@ import TranslationPurpose from '../TranslationPurpose/TranslationPurpose';
 import classes from './CheckAnswer.module.css';
 
 const CheckAnswer = (props) => {
-  const onUpdateCurrentTextAnswer = (e) => {
-    props.updateCurrentTextAnswer(e.target.value);
-  };
-
-  const onClick = () => {
-    props.check();
-  }
-
-  const onKeyDown = (e) => {
-    if (e.key !== 'Enter') return;
-
-    props.check();
-  }
-
   return (
     <div className={classes.answerBox}>
       <TranslationPurpose task={props.task} />
-      <input type="text" className={classes.textAnswer} onChange={onUpdateCurrentTextAnswer}
-        onKeyDown={onKeyDown}
+      <input type="text" className={classes.textAnswer} onChange={props.onUpdateCurrentTextAnswer}
+        onKeyDown={props.onKeyDown}
         value={props.currentTextAnswer} autoFocus />
-      <button className={classes.btn} onClick={onClick}>Проверить</button>
+      <button className={classes.btn} onClick={props.onCheckAnswer}>Проверить</button>
     </div>
   )
 }
