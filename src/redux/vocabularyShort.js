@@ -9,7 +9,6 @@ const vocabulary = [
     comment: `В нашем языке может принимать форму глагола,
     а в английском tired имя прилагательное, например:
     Он очень устал. - He's very tired.`,
-    total: 3,
   },
   {
     rusVersion: "оптимистичен",
@@ -17,14 +16,12 @@ const vocabulary = [
     partSpeech: adjective,
     comment: `другие варианты:
     оптимистичный, оптимистический`,
-    total: 3,
   },
   {
     rusVersion: "страсть",
     engVersion: "passion",
     partSpeech: noun,
     comment: null,
-    total: 3,
   },
 ];
 
