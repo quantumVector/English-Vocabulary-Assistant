@@ -438,6 +438,97 @@ const vocabulary = [
     comment: null
   },
 
+  {
+    rusVersion: "Это слишком просто.",
+    engVersion: "It's too easy.",
+    partSpeech: sentence,
+    comment: null
+  },
+
+  {
+    rusVersion: "Она эксперт в этой области.",
+    engVersion: "She's an expert in this area.",
+    partSpeech: sentence,
+    comment: null
+  },
+
+  {
+    rusVersion: "Я восхищаюсь тобой.",
+    engVersion: "I admire you.",
+    partSpeech: sentence,
+    comment: null
+  },
+
+  {
+    rusVersion: "Я полон идей.",
+    engVersion: "I'm full of ideas.",
+    partSpeech: sentence,
+    comment: null
+  },
+
+  {
+    rusVersion: "лучше",
+    engVersion: "better",
+    partSpeech: adverb,
+    comment: null
+  },
+
+  {
+    rusVersion: "более лучше",
+    engVersion: "better",
+    partSpeech: adverb,
+    comment: `"БОЛЕЕ лучше" пишется без more.`
+  },
+
+  {
+    rusVersion: "Мы показываем более лучшие результаты?",
+    engVersion: "Do we show better results?",
+    partSpeech: sentence,
+    comment: `"БОЛЕЕ лучшe/лучшие" пишется без more.`
+  },
+
+  {
+    rusVersion: "намного лучше",
+    engVersion: "much better",
+    partSpeech: adverb,
+    comment: `"НАМНОГО лучше" пишется с more.`
+  },
+
+  {
+    rusVersion: "Я хочу знать английский намного лучше.",
+    engVersion: "I want to know English much better.",
+    partSpeech: sentence,
+    comment: `"НАМНОГО лучше" пишется с more.`
+  },
+
+  {
+    rusVersion: "родители",
+    engVersion: "parents",
+    partSpeech: noun,
+    comment: null
+  },
+
+  {
+    rusVersion: "вместе",
+    engVersion: "together",
+    partSpeech: adverb,
+    comment: null
+  },
+
+  {
+    rusVersion: "Это успешный проект?",
+    engVersion: "Is it a successful project?",
+    partSpeech: sentence,
+    comment: null
+  },
+
+  {
+    rusVersion: "Это твое окончательное решение?",
+    engVersion: "Is it your final decision?",
+    partSpeech: sentence,
+    comment: null
+  },
+
 ];
 
 export default vocabulary;
