@@ -3,10 +3,6 @@ import TranslationPurpose from '../TranslationPurpose/TranslationPurpose';
 import classes from './WrongAnswerResult.module.css';
 
 const WrongAnswerResult = (props) => {
-  const onClick = () => {
-    props.next();
-  };
-
   return (
     <div>
       <TranslationPurpose task={props.task} />
@@ -18,7 +14,7 @@ const WrongAnswerResult = (props) => {
         <div className={classes.correctAnswer}>{props.correctAnswer}</div>
       </div>
       <div className={classes.сomment}>{props.comment}</div>
-      <button className={classes.btn} onClick={onClick}>Дальше</button>
+      <button className={classes.btn} onClick={props.onNextExercise}>Дальше</button>
     </div>
   )
 }

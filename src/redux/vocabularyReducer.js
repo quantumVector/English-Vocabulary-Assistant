@@ -3,7 +3,7 @@ import vocabulary from './vocabularyShort';
 
 const UPDATE_CURRENT_TEXT_ANSWERE = 'UPDATE-CURRENT-TEXT-ANSWERE';
 const CHECK_ANSWER = 'CHECK-ANSWER';
-const NEXT = 'NEXT';
+const NEXT_EXERCISE = 'NEXT-EXERCISE';
 const RESTART = 'RESTART';
 
 const shuffleVocabulary = (vocabulary) => {
@@ -55,7 +55,7 @@ const vocabularyReducer = (state = initialState, action) => {
         stateCopy.completedItems += 1;
       }
       return stateCopy;
-    case 'NEXT':
+    case 'NEXT-EXERCISE':
       stateCopy.shuffledItems.splice(-1, 1);
 
       if (stateCopy.shuffledItems.length) {
@@ -80,26 +80,26 @@ const vocabularyReducer = (state = initialState, action) => {
   }
 }
 
-export const updateCurrentTextAnswerCreator = (text) => {
+export const updateCurrentTextAnswer = (text) => {
   return {
     type: UPDATE_CURRENT_TEXT_ANSWERE,
     text,
   }
 }
 
-export const checkCreator = () => {
+export const checkAnswer = () => {
   return {
     type: CHECK_ANSWER,
   }
 }
 
-export const nextCreator = () => {
+export const nextExercise = () => {
   return {
-    type: NEXT,
+    type: NEXT_EXERCISE,
   }
 }
 
-export const restartCreator = () => {
+export const restart = () => {
   return {
     type: RESTART,
   }
