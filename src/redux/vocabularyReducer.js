@@ -1,5 +1,5 @@
-//import vocabulary from './vocabulary';
-import vocabulary from './vocabularyShort';
+import vocabulary from './vocabulary';
+//import vocabulary from './vocabularyShort';
 
 const UPDATE_CURRENT_TEXT_ANSWERE = 'UPDATE-CURRENT-TEXT-ANSWERE';
 const CHECK_ANSWER = 'CHECK-ANSWER';
