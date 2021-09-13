@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/English-Vocabulary-Assistant/static/css/main.70f73507.chunk.css",
+    "main.js": "/English-Vocabulary-Assistant/static/js/main.2b67ff34.chunk.js",
+    "main.js.map": "/English-Vocabulary-Assistant/static/js/main.2b67ff34.chunk.js.map",
+    "runtime-main.js": "/English-Vocabulary-Assistant/static/js/runtime-main.60a56ac5.js",
+    "runtime-main.js.map": "/English-Vocabulary-Assistant/static/js/runtime-main.60a56ac5.js.map",
+    "static/js/2.47a9a776.chunk.js": "/English-Vocabulary-Assistant/static/js/2.47a9a776.chunk.js",
+    "static/js/2.47a9a776.chunk.js.map": "/English-Vocabulary-Assistant/static/js/2.47a9a776.chunk.js.map",
+    "static/js/3.75bb046b.chunk.js": "/English-Vocabulary-Assistant/static/js/3.75bb046b.chunk.js",
+    "static/js/3.75bb046b.chunk.js.map": "/English-Vocabulary-Assistant/static/js/3.75bb046b.chunk.js.map",
+    "index.html": "/English-Vocabulary-Assistant/index.html",
+    "static/css/main.70f73507.chunk.css.map": "/English-Vocabulary-Assistant/static/css/main.70f73507.chunk.css.map",
+    "static/js/2.47a9a776.chunk.js.LICENSE.txt": "/English-Vocabulary-Assistant/static/js/2.47a9a776.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.60a56ac5.js",
+    "static/js/2.47a9a776.chunk.js",
+    "static/css/main.70f73507.chunk.css",
+    "static/js/main.2b67ff34.chunk.js"
+  ]
+}
